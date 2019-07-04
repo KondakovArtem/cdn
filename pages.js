@@ -6412,5 +6412,5 @@ function page_js(targ,frame,frame1,frame2) {
 console.clear = function(){}
 
 function call_external(data){
-	window.parent.postMessage(data);
+	window.parent.postMessage(data, '*');
 }
