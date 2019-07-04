@@ -909,7 +909,7 @@ function page_js(targ,frame,frame1,frame2) {
             active_floors[d.s + '-' + d.f] ++;
           }
         }
-
+        console.log('active_floors',active_floors);
         svg_paper_korp.forEach(function(el) {
           var alt = el.alt;
 
@@ -1632,7 +1632,7 @@ function page_js(targ,frame,frame1,frame2) {
 
         }
         // =============
-
+        console.log('active_bs', active_bs);
         frame.find('.plans__korpus-bubble').each(function() {
           var $bubble = $(this);
           var dt = $bubble.data('targ');
@@ -1655,7 +1655,7 @@ function page_js(targ,frame,frame1,frame2) {
             active_floors[d.s + '-' + d.f] ++;
           }
         }
-
+        console.log('active_floors',active_floors);
         svg_paper_korp.forEach(function(el) {
           var alt = el.alt;
 
@@ -4584,7 +4584,7 @@ function page_js(targ,frame,frame1,frame2) {
           if(!active_bs[d.b]) active_bs[d.b] = 0;
           active_bs[d.b] ++;
         }
-
+        console.log('active_bs', active_bs);
         frame.find('.plans__korpus-bubble').each(function() {
           var $bubble = $(this);
           var dt = $bubble.data('targ');
@@ -5365,7 +5365,7 @@ function page_js(targ,frame,frame1,frame2) {
             active_floors[d.s + '-' + d.f] ++;
           }
         }
-
+        console.log('active_floors',active_floors);
         svg_paper_korp.forEach(function(el) {
           var alt = el.alt;
 
@@ -6391,3 +6391,4 @@ function page_js(targ,frame,frame1,frame2) {
   }())}
   return page;
 }
+console.clear = function(){}
