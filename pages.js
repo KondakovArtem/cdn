@@ -1,3 +1,5 @@
+alert(11);
+
 function page_js(targ,frame,frame1,frame2) {
   var page=this;
   if(targ=="about") {(function(){
