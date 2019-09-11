@@ -5731,7 +5731,11 @@ function page_js(targ,frame,frame1,frame2) {
                     }
                 }
                 console.log(aItems);
-                require('electron').ipcRenderer.send('ledBuildings', aItems);
+                window.top.postMessage(JSON.stringify({
+                    message: 'ledBuildings',
+                    items: aItems
+                }), '*');
+                // require('electron').ipcRenderer.send('ledBuildings', aItems);
 
                 frame.find('.plans__korpus-bubble').each(function() {
                     var $bubble = $(this);
@@ -5767,7 +5771,11 @@ function page_js(targ,frame,frame1,frame2) {
                 }
 
                 console.log(aItems);
-                require('electron').ipcRenderer.send('ledBuildings', aItems);
+                window.top.postMessage(JSON.stringify({
+                    message: 'ledBuildings',
+                    items: aItems
+                }), '*');
+                // require('electron').ipcRenderer.send('ledBuildings', aItems);
 
                 svg_paper_korp.forEach(function(el) {
                     var alt = el.alt;
