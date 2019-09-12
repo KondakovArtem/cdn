@@ -5796,7 +5796,7 @@ function page_js(targ,frame,frame1,frame2) {
                     apart_help_html = '',
                     apart_help_text = ['Другие квартиры в продаже', 'Подходящие квартиры'];
 
-                const aItems = [];
+
 
                 svg_paper_floor.forEach(function(el) {
                     var alt = el.alt;
@@ -5818,7 +5818,7 @@ function page_js(targ,frame,frame1,frame2) {
                     }
                 });
 
-                var aItems=[];
+                var aItems = [];
                 svg_paper_floor.forEach(function(el) {
                     var alt = el.alt;
                     if(($.inArray(alt, result) + 1) && el.st) {
