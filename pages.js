@@ -5796,6 +5796,8 @@ function page_js(targ,frame,frame1,frame2) {
                     apart_help_html = '',
                     apart_help_text = ['Другие квартиры в продаже', 'Подходящие квартиры'];
 
+                const aItems = [];
+
                 svg_paper_floor.forEach(function(el) {
                     var alt = el.alt;
 
@@ -5804,6 +5806,7 @@ function page_js(targ,frame,frame1,frame2) {
                             el.bottom.attr({'opacity' : '0'});
                         } else {
                             el.bottom.attr({'opacity' : apart_opacity[1]});
+
                         }
                         el.data('active', 1);
                         apart_help[1] += 1;
@@ -5814,6 +5817,26 @@ function page_js(targ,frame,frame1,frame2) {
                         apart_help[0] += 1;
                     }
                 });
+
+                var aItems=[];
+                svg_paper_floor.forEach(function(el) {
+                    var alt = el.alt;
+                    if(($.inArray(alt, result) + 1) && el.st) {
+                        if(!(el.st > 1 || el.st === 0)){
+                            var altData = alt.split('-');
+                            var aItem = altData[0]+'-'+altData[1];
+                            if (aItems.indexOf(aItem)===-1){
+                                aItems.push(aItem);
+                            }
+                        }
+                    }
+                });
+
+                window.top.postMessage(JSON.stringify({
+                    message: 'ledBuildings',
+                    items: aItems
+                }), '*');
+
                 for(var i = 1; i >= 0; i --) {
                     if(apart_help[i]) apart_help_html += '<div class="apart__help"><div class="apart__help-icon" style="opacity: ' + apart_opacity[i] + ';"></div><span>' + apart_help_text[i] + '</span></div>';
                 }
