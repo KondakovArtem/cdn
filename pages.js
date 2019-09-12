@@ -5790,7 +5790,6 @@ function page_js(targ,frame,frame1,frame2) {
                 });
             }
 
-
             function filter_aparts(result) {
                 var apart_help = [0, 0],
                     apart_help_html = '',
