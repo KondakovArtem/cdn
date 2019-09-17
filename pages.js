@@ -7201,3 +7201,9 @@ function page_js(targ,frame,frame1,frame2) {
     }())}
     return page;
 }
+
+window.addEventListener('click', function(){
+    window.top.postMessage(JSON.stringify({
+        message: 'userAction'
+    }), '*');
+});
